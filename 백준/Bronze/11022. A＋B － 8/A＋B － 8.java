@@ -7,7 +7,6 @@ public class Main {
         final int count = (int) streamTokenizer.nval;
         final StringBuilder sb = new StringBuilder();
 
-        final BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
         for (int i = 1; i <= count; i++) {
             streamTokenizer.nextToken();
             final int a = (int)streamTokenizer.nval;
@@ -15,9 +14,6 @@ public class Main {
             final int b = (int) streamTokenizer.nval;
             sb.append("Case #" + i + ": " + a + " + " + b + " = ").append(a + b + "\n");
         }
-        bufferedWriter.write(sb.toString());
-        bufferedWriter.flush();
-
-        bufferedWriter.close();
+        System.out.println(sb.toString());
     }
 }

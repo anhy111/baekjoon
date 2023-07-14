@@ -3,7 +3,7 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
+//        BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(System.out));
 
         final StringBuilder stringBuilder = new StringBuilder();
         String str;
@@ -13,10 +13,10 @@ public class Main {
             int b = split[1].charAt(0) - '0';
             stringBuilder.append(a + b).append("\n");
         }
-
-        bufferedWriter.write(stringBuilder.toString());
-        bufferedWriter.flush();
+        System.out.print(stringBuilder.toString());
+//        bufferedWriter.write(stringBuilder.toString());
+//        bufferedWriter.flush();
         bufferedReader.close();
-        bufferedWriter.close();
+//        bufferedWriter.close();
     }
 }

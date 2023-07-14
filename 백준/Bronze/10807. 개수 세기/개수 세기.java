@@ -18,7 +18,9 @@ public class Main {
 
         int cnt = 0;
         for (int i = 0; i < max; i++) {
-            cnt += arr[i] == searchInt ? 1 : 0;
+            if (arr[i] == searchInt) {
+                cnt++;
+            }
         }
 
         System.out.print(cnt);

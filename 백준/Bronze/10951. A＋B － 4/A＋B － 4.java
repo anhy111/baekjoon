@@ -11,7 +11,7 @@ public class Main {
             final String[] split = str.split(" ");
             int a = split[0].charAt(0) - '0';
             int b = split[1].charAt(0) - '0';
-            stringBuilder.append(a + b + "\n");
+            stringBuilder.append(a + b).append("\n");
         }
 
         bufferedWriter.write(stringBuilder.toString());

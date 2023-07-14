@@ -9,8 +9,8 @@ public class Main {
         String str;
         while ((str = bufferedReader.readLine()) != null) {
             final String[] split = str.split(" ");
-            int a = Integer.parseInt(split[0]);
-            int b = Integer.parseInt(split[1]);
+            int a = split[0].charAt(0) - '0';
+            int b = split[1].charAt(0) - '0';
             stringBuilder.append(a + b + "\n");
         }
 

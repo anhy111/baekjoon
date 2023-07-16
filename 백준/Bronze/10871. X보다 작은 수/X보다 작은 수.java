@@ -21,7 +21,7 @@ public class Main {
         int val = 0;
         int total = 0;
         while ((val = System.in.read()) != '\n' && val != ' ') {
-            total = total * 10 + (val - '0');
+            total = total * 10 + (val - 48);
         }
         return total;
     }

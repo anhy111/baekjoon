@@ -12,8 +12,8 @@ public class Main {
         final String[] inputs = bufferedReader.readLine().split(" ");
         final StringBuilder sb = new StringBuilder();
 
-        for (String input : inputs) {
-            final int in = Integer.parseInt(input);
+        for (int i = 0; i < inputs.length; i++) {
+            final int in = Integer.parseInt(inputs[i]);
             if (in < X) {
                 sb.append(in + " ");
             }

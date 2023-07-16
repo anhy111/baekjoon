@@ -10,7 +10,7 @@ public class Main {
         for (int i = 0; i < X; i++) {
             int num = readInt();
             if (num < N) {
-                sb.append(num + " ");
+                sb.append(num).append(' ');
             }
         }
 

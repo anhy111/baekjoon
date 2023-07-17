@@ -12,13 +12,8 @@ public class Main {
         int min = 1000001;
         int max = -1000001;
         for (int i = 0; i < cnt; i++) {
-            if (arr[i] < min) {
-                min = arr[i];
-            }
-
-            if (max < arr[i]) {
-                max = arr[i];
-            }
+            min = Math.min(min, arr[i]);
+            max = Math.max(max, arr[i]);
         }
 
         StringBuilder sb = new StringBuilder();

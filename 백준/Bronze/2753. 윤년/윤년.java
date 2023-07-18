@@ -3,14 +3,14 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         final int year = readInt();
-        boolean result = false;
+        int result = 0;
         if (year % 400 == 0) {
-            result = true;
+            result = 1;
         } else if ((year % 4 == 0) && (year % 100 != 0)) {
-            result = true;
+            result = 1;
         }
 
-        System.out.println(result?1:0);
+        System.out.print(result);
     }
 
     private static int readInt() throws IOException {

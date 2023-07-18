@@ -6,12 +6,12 @@ public class Main {
         final int count = readInt();
 
         int[] arr = new int[size];
-        for (int i = 1; i <= count; i++) {
+        for (int i = 0; i < count; i++) {
             final int from = readInt();
             final int until = readInt();
             final int number = readInt();
-            for (int j = from; j <= until; j++) {
-                arr[j - 1] = number;
+            for (int j = from -1; j < until; j++) {
+                arr[j] = number;
             }
         }
 

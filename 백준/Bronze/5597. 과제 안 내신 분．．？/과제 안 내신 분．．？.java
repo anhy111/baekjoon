@@ -23,7 +23,7 @@ public class Main {
         int val = 0;
         int total = 0;
 
-        while ((val = System.in.read()) != '\n' && val != ' ') {
+        while ((val = System.in.read()) != '\n') {
             total = total * 10 + (val - '0');
         }
         return total;

@@ -5,13 +5,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         final int size = readInt();
 
-        final int[] arr = new int[size];
         double max = Integer.MIN_VALUE;
         double sum = 0;
         for (int i = 0; i < size; i++) {
-            arr[i] = readInt();
-            sum += arr[i];
-            max = Math.max(arr[i], max);
+            int input = readInt();
+            sum += input;
+            max = Math.max(input, max);
         }
 
         System.out.print(sum / max * 100 / size);

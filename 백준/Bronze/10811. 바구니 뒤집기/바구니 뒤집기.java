@@ -14,12 +14,13 @@ public class Main {
         for (int i = 0; i < count; i++) {
             int start = readInt() - 1;
             int end = readInt() - 1;
-            int middle = start + (int)Math.ceil((end - start)/ 2.0);
+            int middle = (start + end + 1) / 2;
 
             for (int j = start; j < middle; j++) {
+                int endIdx = end - (j - start);
                 int temp = arr[j];
-                arr[j] = arr[end - (j - start)];
-                arr[end - (j - start)] = temp;
+                arr[j] = arr[endIdx];
+                arr[endIdx] = temp;
             }
         }
 

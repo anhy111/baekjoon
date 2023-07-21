@@ -7,17 +7,14 @@ public class Main {
 
         final int[] arr = new int[size];
         double max = Integer.MIN_VALUE;
+        double sum = 0;
         for (int i = 0; i < size; i++) {
             arr[i] = readInt();
+            sum += arr[i];
             max = Math.max(arr[i], max);
         }
 
-        double sum = 0;
-        for (int i = 0; i < size; i++) {
-            sum += arr[i] / max * 100;
-        }
-
-        System.out.print(sum / size);
+        System.out.print(sum / max * 100 / size);
     }
 
     private static int readInt() throws IOException {

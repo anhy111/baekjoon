@@ -1,30 +1,22 @@
 import java.io.IOException;
-import java.util.Arrays;
 
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        int[] arr = new int[] { -1, -1, -1, -1, -1,
-                                -1, -1, -1, -1, -1 };
+        int[] arr = new int[42];
 
 
         for (int i = 0; i < 10; i++) {
-            int input = readInt() % 42;
-            for (int j = 0; j < arr.length; j++) {
-                if (arr[j] == -1 || arr[j] == input) {
-                    arr[j] = input;
-                    break;
-                }
-            }
+            arr[readInt() % 42]++;
         }
 
-        for (int i = 0; i < 10; i++) {
-            if (arr[i] == -1) {
-                System.out.println(i);
-                return;
+        int count = 0;
+        for (int num : arr) {
+            if (0 < num) {
+                count++;
             }
         }
-        System.out.print(10);
+        System.out.print(count);
     }
 
     private static int readInt() throws IOException {

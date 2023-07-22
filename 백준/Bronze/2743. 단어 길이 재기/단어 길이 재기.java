@@ -9,7 +9,7 @@ public class Main {
     private static int readCount() throws IOException {
         int val = 0;
         int cnt = 0;
-        while ((val = System.in.read()) != '\n' && val != ' ') {
+        while ((val = System.in.read()) != '\n') {
             cnt++;
         }
         return cnt;

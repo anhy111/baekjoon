@@ -9,10 +9,12 @@ public class Main {
             arr[i] = -1;
         }
 
+        int val;
         int inx;
         int count = 0;
 
-        while ((inx = alphaToIndex()) != -1) {
+        while ((val = System.in.read()) != '\n') {
+            inx = val - 'a';
             if (arr[inx] == -1) {
                 arr[inx] = count;
             }
@@ -25,14 +27,5 @@ public class Main {
         }
 
         System.out.println(sb);
-    }
-
-    private static int alphaToIndex() throws IOException {
-        int val = 0;
-
-        if ((val = System.in.read()) != '\n') {
-            return val - 'a';
-        }
-        return -1;
     }
 }

@@ -6,7 +6,6 @@ public class Main {
 
         int val;
         char[] word = new char[100];
-        char[] reverseWord = new char[100];
         int result = 1;
 
         int cnt = 0;
@@ -16,12 +15,8 @@ public class Main {
 
         cnt--;
 
-        for (int i = cnt; i >= 0; i--) {
-            reverseWord[cnt - i] = word[i];
-        }
-
-        for (int i = 0; i < cnt; i++) {
-            if (reverseWord[i] != word[i]) {
+        for (int i = 0; i < cnt / 2 + 1; i++) {
+            if (word[i] != word[cnt - i]) {
                 result = 0;
                 break;
             }

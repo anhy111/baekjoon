@@ -37,7 +37,7 @@ public class Main {
                 continue;
             }
 
-            final double grade = gradeScore.get(String.valueOf(gradeChars));
+            final double grade = gradeScore.get(gradeChars);
             totalRating += credit * grade;
             totalCredit += credit;
         }

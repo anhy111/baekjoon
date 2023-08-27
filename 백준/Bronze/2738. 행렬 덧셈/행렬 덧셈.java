@@ -1,6 +1,5 @@
 import java.io.IOException;
 
-
 public class Main {
     public static void main(String[] args) throws IOException {
         final int y = readInt();
@@ -13,16 +12,11 @@ public class Main {
                 arr[i][j] = readInt();
             }
         }
-
-        for (int i = 0; i < y; i++) {
-            for (int j = 0; j < x; j++) {
-                arr[i][j] += readInt();
-            }
-        }
-
+        
         final StringBuilder sb = new StringBuilder();
         for (int i = 0; i < y; i++) {
             for (int j = 0; j < x; j++) {
+                arr[i][j] += readInt();
                 sb.append(arr[i][j]).append(' ');
             }
             sb.append('\n');

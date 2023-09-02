@@ -20,7 +20,9 @@ public class Main {
         int sum = 0;
         for (int i = 0; i < 100; i++) {
             for (int j = 0; j < 100; j++) {
-                sum += arr[i][j];
+                if (arr[i][j] > 0) {
+                    sum++;
+                }
             }
         }
 

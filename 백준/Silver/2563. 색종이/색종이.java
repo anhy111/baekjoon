@@ -18,9 +18,9 @@ public class Main {
         }
 
         int sum = 0;
-        for (int[] ints : arr) {
-            for (int inx : ints) {
-                sum += inx;
+        for (int i = 0; i < 100; i++) {
+            for (int j = 0; j < 100; j++) {
+                sum += arr[i][j];
             }
         }
 

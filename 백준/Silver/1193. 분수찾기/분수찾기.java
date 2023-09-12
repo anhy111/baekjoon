@@ -45,7 +45,10 @@ public class Main {
             currentLocation++;
         }
 
-        System.out.println(left + "/" + right);
+        final StringBuilder sb = new StringBuilder();
+        sb.append(left).append("/").append(right);
+
+        System.out.println(sb);
 
     }
 

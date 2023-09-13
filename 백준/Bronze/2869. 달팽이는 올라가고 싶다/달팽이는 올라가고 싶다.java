@@ -14,13 +14,12 @@ public class Main {
             cnt = 1;
         } else {
             int todayMeter = increaseMeter - decreaseMeter;
-
-            if (targetMeter % todayMeter == 0) {
-                cnt = targetMeter / todayMeter;
-            } else {
-                cnt = targetMeter / todayMeter + 1;
-            } 
             
+            cnt = targetMeter / todayMeter;
+            if (targetMeter % todayMeter != 0) {
+                cnt++;
+            }
+
             while (todayMeter * (cnt - 2) + increaseMeter >= targetMeter) {
                 cnt--;
             }

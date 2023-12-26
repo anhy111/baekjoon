@@ -22,6 +22,7 @@ class Solution {
         List<String> orderGenre = new ArrayList<>(albumMap.keySet());
 
         orderGenre.sort(((o1, o2) -> sumPlaysGenre.get(o2).compareTo(sumPlaysGenre.get(o1))));
+
         List<Integer> bestAlbumPlays = new ArrayList<>();
         int inx = 0;
 
@@ -39,20 +40,10 @@ class Solution {
             if (musicPlays.size() == 1) {
                 continue;
             }
-
-            if (musicPlays.get(0).equals(musicPlays.get(1))) {
-                bestAlbumPlays.add(
-                        IntStream.range(bestAlbumPlays.get(inx-1) + 1, plays.length)
-                        .filter(i -> genres[i].equals(genre) && musicPlays.get(1) == plays[i])
-                        .findFirst()
-                        .orElse(-1)
-                );
-                inx++;
-                continue;
-            }
+            int startRange = musicPlays.get(0).equals(musicPlays.get(1)) ? bestAlbumPlays.get(inx-1) + 1 : 0;
 
             bestAlbumPlays.add(
-                    IntStream.range(0, plays.length)
+                    IntStream.range(startRange, plays.length)
                     .filter(i -> genres[i].equals(genre) && musicPlays.get(1) == plays[i])
                     .findFirst()
                     .orElse(-1)

@@ -6,10 +6,9 @@ public class Solution {
         final ArrayList<Integer> list = new ArrayList<>();
         for (int i = 0; i < arr.length; i++) {
             int num = arr[i];
-            if (prevNum == num) {
-                continue;
+            if (prevNum != num) {
+                list.add(num);
             }
-            list.add(num);
             prevNum = num;
         }
 

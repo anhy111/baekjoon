@@ -2,53 +2,22 @@ class Solution {
     public int[] solution(int[] answers) {
 
         int[] peoples = new int[3];
+        int[] people1 = new int[]{1, 2, 3, 4, 5};
+        int[] people2 = new int[]{2, 1, 2, 3, 2, 4, 2, 5};
+        int[] people3 = new int[]{3, 3, 1, 1, 2, 2, 4, 4, 5, 5};
 
         for (int i = 0; i < answers.length; i++) {
             int answer = answers[i];
-
-            if ((i % 5) + 1 == answer) {
+            if (people1[i % people1.length] == answer) {
                 peoples[0]++;
             }
 
-            switch (i % 8) {
-                case 1:
-                    peoples[1] += answer == 1 ? 1 : 0;
-                    break;
-                case 3:
-                    peoples[1] += answer == 3 ? 1 : 0;
-                    break;
-                case 5:
-                    peoples[1] += answer == 4 ? 1 : 0;
-                    break;
-                case 7:
-                    peoples[1] += answer == 5 ? 1 : 0;
-                    break;
-                default:
-                    peoples[1] += answer == 2 ? 1 : 0;
-                    break;
+            if (people2[i % people2.length] == answer) {
+                peoples[1]++;
             }
 
-            switch (i % 10) {
-                case 0:
-                case 1:
-                    peoples[2] += answer == 3 ? 1 : 0;
-                    break;
-                case 2:
-                case 3:
-                    peoples[2] += answer == 1 ? 1 : 0;
-                    break;
-                case 4:
-                case 5:
-                    peoples[2] += answer == 2 ? 1 : 0;
-                    break;
-                case 6:
-                case 7:
-                    peoples[2] += answer == 4 ? 1 : 0;
-                    break;
-                case 8:
-                case 9:
-                    peoples[2] += answer == 5 ? 1 : 0;
-                    break;
+            if (people3[i % people3.length] == answer) {
+                peoples[2]++;
             }
         }
 

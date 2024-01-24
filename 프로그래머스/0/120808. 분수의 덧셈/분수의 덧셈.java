@@ -1,6 +1,5 @@
 class Solution {
     public int[] solution(int numer1, int denom1, int numer2, int denom2) {
-        int[] result = new int[2];
         int denom = denom1 * denom2;
         int numer = numer1 * (denom / denom1) + numer2 * (denom / denom2);
 
@@ -9,9 +8,8 @@ class Solution {
             numer /= maxComDivisor;
             denom /= maxComDivisor;
         }
-        result[0] = numer;
-        result[1] = denom;
-        return result;
+        
+        return new int[]{numer, denom};
     }
     
     private int maxComDivisor(int a, int b) {

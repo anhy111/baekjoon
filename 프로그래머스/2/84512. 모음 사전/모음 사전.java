@@ -6,16 +6,16 @@ class Solution {
     public int solution(String word) {
         List<Character> dictionary = Arrays.asList(new Character[]{'A', 'E', 'I', 'O', 'U'});
         final char[] currentWord = new char[5];
-        currentWord[0] = 'A';
+        currentWord[0] = dictionary.get(0);
         int length = 1;
         int cnt = 1;
 
         while (!equal(word, currentWord, length)) {
             if (length < 5) {
-                currentWord[length] = 'A';
+                currentWord[length] = dictionary.get(0);
                 length++;
-            } else if (currentWord[length - 1] == 'U') {
-                while (currentWord[length - 1] == 'U') {
+            } else if (currentWord[length - 1] == dictionary.get(dictionary.size() - 1)) {
+                while (currentWord[length - 1] == dictionary.get(dictionary.size() - 1)) {
                     currentWord[length - 1] = 0;
                     length--;
                 }
@@ -29,7 +29,7 @@ class Solution {
 
         return cnt;
     }
-
+    
     private boolean equal(final String word, final char[] currentWord, int length) {
         for (int i = 0; i < word.length(); i++) {
             if (word.charAt(i) != currentWord[i]) {

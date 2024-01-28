@@ -1,23 +1,22 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Solution {
 
     public int solution(int[] people, int limit) {
-        int answer = 0;
-
         Arrays.sort(people);
-        int leftPointer = 0;
-        int rightPointer = people.length - 1;
+        int boat = 0;
 
-        while (leftPointer <= rightPointer) {
-            if (people[leftPointer] + people[rightPointer] <= limit) {
-                leftPointer++;
+        int left = 0;
+        int right = people.length - 1;
+        while (left <= right) {
+            if (people[left] + people[right] <= limit) {
+                left++;
             }
-            rightPointer--;
-            answer++;
+            right--;
+            boat++;
         }
 
-        return answer;
+        return boat;
     }
 
 }

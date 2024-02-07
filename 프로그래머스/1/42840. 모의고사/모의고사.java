@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 class Solution {
     public int[] solution(int[] answers) {
 
@@ -22,25 +27,18 @@ class Solution {
         }
 
         int max = 0;
-        int cnt = 0;
+        List<Integer> list = new ArrayList<>(Arrays.stream(peoples).boxed().collect(Collectors.toList()));
         for (int i = 0; i < peoples.length; i++) {
             if (max < peoples[i]) {
                 max = peoples[i];
-                cnt = 1;
+                list.clear();
+                list.add(i + 1);
                 continue;
             } else if (max == peoples[i]) {
-                cnt++;
+                list.add(i + 1);
             }
         }
 
-        int[] result = new int[cnt];
-        int inx = 0;
-        for (int i = 0; i < peoples.length; i++) {
-            if (peoples[i] == max) {
-                result[inx++] = i + 1;
-            }
-        }
-        
-        return result;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 }

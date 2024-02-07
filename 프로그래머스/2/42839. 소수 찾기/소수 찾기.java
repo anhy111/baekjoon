@@ -48,7 +48,6 @@ class Solution {
             return false;
         }
         
-    
         if (number == 2) {
             return true;
         }

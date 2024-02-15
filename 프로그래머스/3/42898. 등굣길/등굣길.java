@@ -13,12 +13,12 @@ class Solution {
                     arr[0][0] = 1;
                     continue;
                 }
-                
+
                 int sum = 0;
                 if (arr[i][j] == -1) {
                     continue;
                 }
-                
+
                 if (i > 0 && arr[i - 1][j] != -1) {
                     sum += arr[i - 1][j];
                 }

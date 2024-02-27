@@ -1,16 +1,17 @@
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 class Solution {
     public String solution(String my_string) {
         Set<Character> set = new HashSet<>();
-        String result = "";
+        final StringBuilder sb = new StringBuilder();
         for (char c : my_string.toCharArray()) {
             if (set.contains(c)) {
                 continue;
             }
             set.add(c);
-            result += c;
+            sb.append(c);
         }
-        return result;
+        return sb.toString();
     }
 }

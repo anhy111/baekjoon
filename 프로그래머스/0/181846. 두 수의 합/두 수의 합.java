@@ -1,9 +1,9 @@
 class Solution {
     public String solution(String a, String b) {
         final char[] chars = new char[Math.max(a.length(), b.length())];
-        String reverseA = new StringBuffer(a).reverse().toString();
-        String reverseB = new StringBuffer(b).reverse().toString();
-        
+        String reverseA = new StringBuilder(a).reverse().toString();
+        String reverseB = new StringBuilder(b).reverse().toString();
+
         int ceil = 0;
         for (int i = 0; i < chars.length; i++) {
             int num = 0;
@@ -23,7 +23,7 @@ class Solution {
 
             chars[i] = (char)(num + '0');
         }
-        String answer = new StringBuffer(String.valueOf(chars)).reverse().toString();
+        String answer = new StringBuilder(String.valueOf(chars)).reverse().toString();
         return ceil == 0 ? answer : 1 + answer;
     }
 }
